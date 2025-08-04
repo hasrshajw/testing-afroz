@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plan Features</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-color: #f9f7ff;
+            --card-background-color: #ffffff;
+            --text-color-primary: #2f2f2f;
+            --text-color-accent: #673ab7;
+            --icon-color-success: #259e61;
+            --border-color-dashed: #b0b0b0;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        /* --- Desktop Styles --- */
+        .h-shared-pricing-card {
+            background-color: var(--card-background-color);
+            border-radius: 1.5rem;
+            padding: 48px;
+            max-width: 1100px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: padding 0.3s ease;
+        }
+
+        .h-shared-pricing-card__title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 40px 0;
+            color: var(--text-color-primary);
+            transition: font-size 0.3s ease, text-align 0.3s ease;
+        }
+
+        .h-shared-pricing-card__title b {
+            color: var(--text-color-accent);
+            font-weight: 700;
+        }
+
+        .h-shared-pricing-card__features {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .features-column {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .h-plan-feature {
+            margin-bottom: 16px;
+        }
+
+        .h-plan-feature:last-child {
+            margin-bottom: 0;
+        }
+
+        .h-plan-feature__content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .h-svgo-icon--small {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            fill: var(--icon-color-success);
+        }
+
+        .t-body-4 {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .h-plan-feature__content--tooltip-text-dashed {
+            border-bottom: 1px dashed var(--border-color-dashed);
+            cursor: help;
+        }
+
+        /* --- Mobile View Adjustments --- */
+        @media (max-width: 992px) {
+            .h-shared-pricing-card__features {
+                flex-direction: column;
+            }
+            
+            /* 1. Update card padding for mobile */
+            .h-shared-pricing-card {
+                padding: 32px;
+            }
+
+            /* 2 & 3. Change heading size and alignment for mobile */
+            .h-shared-pricing-card__title {
+                font-size: 26px;
+                text-align: left;
+            }
+
+            /* The feature text size (16px) is already suitable for mobile. */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="h-shared-pricing-card">
+        <h3 class="h-shared-pricing-card__title">Every plan has <b>everything you need</b> and more</h3>
+        <div class="h-shared-pricing-card__features">
+            <div class="features-column">
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4">Unlimited workflows</div>
+                    </div>
+                </div>
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4">Unlimited concurrent executions</div>
+                    </div>
+                </div>
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4">Community nodes</div>
+                    </div>
+                </div>
+            </div>
+            <div class="features-column">
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4">n8n with queue mode</div>
+                    </div>
+                </div>
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4">n8n with 100 pre-made workflows</div>
+                    </div>
+                </div>
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4">One-click n8n installation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="features-column">
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4">Hostinger API n8n community node</div>
+                    </div>
+                </div>
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4 h-plan-feature__content--tooltip-text-dashed">AI assistant powered by MCP</div>
+                    </div>
+                </div>
+                <div class="h-plan-feature">
+                    <div class="h-plan-feature__content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="h-svgo-icon h-svgo-icon--small">
+                            <path fill="currentColor" d="M11.102 7.37a.75.75 0 1 0-1.06-1.06L7.54 8.81 6.508 7.78a.75.75 0 0 0-1.06 1.06l1.407 1.408a.968.968 0 0 0 1.37 0l2.877-2.878Z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M15 7.995a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="t-body-4"><b>Free weekly</b> backups</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
