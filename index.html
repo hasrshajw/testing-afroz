@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +26,7 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 2rem;
+            padding: 0.5rem;
         }
 
         /* --- Desktop Styles --- */
@@ -90,6 +89,7 @@
         .t-body-4 {
             font-size: 16px;
             line-height: 1.5;
+            transition: font-size 0.3s ease;
         }
 
         .h-plan-feature__content--tooltip-text-dashed {
@@ -101,20 +101,23 @@
         @media (max-width: 992px) {
             .h-shared-pricing-card__features {
                 flex-direction: column;
+                gap: 16px;
             }
             
-            /* 1. Update card padding for mobile */
+            /* 1. Reduce card padding to 16px for mobile */
             .h-shared-pricing-card {
-                padding: 32px;
+                padding: 16px;
             }
 
-            /* 2 & 3. Change heading size and alignment for mobile */
             .h-shared-pricing-card__title {
-                font-size: 26px;
+                font-size: 22px;
                 text-align: left;
+                margin-bottom: 24px;
             }
 
-            /* The feature text size (16px) is already suitable for mobile. */
+            .t-body-4 {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
