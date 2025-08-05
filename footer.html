@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payable Footer - Final Design</title>
+    
+    <!-- IBM PLEX SANS FONT IMPORT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS Variables for a consistent design system --- */
+        :root {
+            --bg-dark-green: #1E463E;
+            --bg-dark-green-gradient: linear-gradient(135deg, #2a5a50, #1E463E);
+            --accent-light-green: #B4E49C;
+            --accent-light-green-hover: #a3cf8b;
+            --bg-footer-gray-darker: #e9ecef;
+            --bg-white: #ffffff;
+            --text-primary-dark: #212529;
+            --text-secondary-gray: #6C757D;
+            --text-on-dark: #ffffff;
+            --text-on-dark-muted: #d1d5db;
+            --border-color-focus: #B4E49C;
+            --font-family-base: 'IBM Plex Sans', sans-serif;
+            --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.07);
+            --border-radius-card: 24px;
+            --border-radius-button: 12px;
+        }
+
+        /* --- Global Styles & Resets --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* --- Unified Gray Background --- */
+        .site-footer {
+            background-color: var(--bg-footer-gray-darker);
+            padding: 60px;
+        }
+
+        /* --- Subscribe Card (Upper Part) --- */
+        .subscribe-card {
+            background: var(--bg-dark-green-gradient);
+            color: var(--text-on-dark);
+            border-radius: var(--border-radius-card);
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 80px;
+        }
+
+        .subscribe-info {
+            flex: 1;
+        }
+
+        .subscribe-info h2 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .subscribe-info p {
+            font-size: 1rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.6;
+            max-width: 90%;
+        }
+
+        .subscribe-form-area {
+            flex-basis: 45%;
+        }
+
+        .subscribe-form-area label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        /* --- Form layout with separate elements --- */
+        .subscribe-form {
+            display: flex;
+            gap: 12px; /* Space between the input and button */
+        }
+        
+        .subscribe-form input[type="email"] {
+            flex-grow: 1;
+            background-color: #2c534b; /* Dark background */
+            border: 2px solid transparent;
+            color: var(--text-on-dark);
+            padding: 16px 20px;
+            border-radius: var(--border-radius-button); /* Own rounded corners */
+            font-size: 1rem;
+            outline: none;
+            font-family: var(--font-family-base);
+            transition: border-color 0.3s ease;
+        }
+        
+        .subscribe-form input[type="email"]::placeholder {
+            color: #a0b5b0;
+        }
+        
+        .subscribe-form input[type="email"]:focus {
+            border-color: var(--border-color-focus);
+        }
+
+        .subscribe-form button {
+            background-color: var(--accent-light-green);
+            color: var(--bg-dark-green);
+            border: none;
+            padding: 16px 32px;
+            border-radius: var(--border-radius-button); /* Own rounded corners */
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            white-space: nowrap;
+            font-family: var(--font-family-base);
+            transition: background-color 0.3s ease;
+        }
+
+        .subscribe-form button:hover {
+            background-color: var(--accent-light-green-hover);
+        }
+
+        .form-disclaimer {
+            font-size: 0.8rem;
+            color: #a0b5b0;
+            margin-top: 16px;
+        }
+
+        .form-disclaimer a {
+            color: #a0b5b0;
+            text-decoration: underline;
+        }
+        
+        /* --- Bottom Footer Area --- */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0 20px;
+        }
+
+        .footer-logo-area {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .logo-container .logo-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .logo-container .logo-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--bg-dark-green);
+        }
+
+        .logo-tagline {
+            font-size: 0.95rem;
+            color: var(--text-secondary-gray);
+        }
+
+        .footer-links-container {
+            display: flex;
+            gap: 120px;
+        }
+
+        .footer-column h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary-dark);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 18px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: var(--text-secondary-gray);
+            font-size: 1rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--bg-dark-green);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .site-footer {
+                padding: 20px;
+            }
+            .subscribe-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px;
+            }
+            .subscribe-form-area {
+                width: 100%;
+                margin-top: 20px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 50px;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .footer-links-container {
+                gap: 60px;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-links-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .subscribe-info h2 {
+                font-size: 2.2rem;
+            }
+            .subscribe-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="site-footer">
+
+        <!-- Upper Subscribe Card -->
+        <div class="subscribe-card">
+            <div class="subscribe-info">
+                <h2>Subscribe our newsletter</h2>
+                <p>Subscribe to our newsletter and be the first to receive insights, updates, and expert tips on optimizing your financial management.</p>
+            </div>
+            <div class="subscribe-form-area">
+                <label for="email">Stay up-to-date</label>
+                <form action="#" method="POST" class="subscribe-form">
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="form-disclaimer">By subscribing you agree to our <a href="#">Privacy Policy</a>.</p>
+            </div>
+        </div>
+
+        <!-- Bottom Footer with Logo and Links -->
+        <div class="footer-bottom">
+            <div class="footer-logo-area">
+                <div class="logo-container">
+                    <img src="https://placehold.co/60x60/1E463E/B4E49C?text=P&font=ibmplexsans" alt="Payable Logo" class="logo-image">
+                    <span class="logo-text">payable</span>
+                </div>
+                <p class="logo-tagline">Make your complicated finance team simple.</p>
+            </div>
+
+            <div class="footer-links-container">
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">Payment</a></li>
+                        <li><a href="#">Card</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Services</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>
